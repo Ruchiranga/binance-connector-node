@@ -1,5 +1,4 @@
 const axios = require('axios')
-const { Console } = require('console')
 const constants = require('./constants')
 
 const removeEmptyValue = obj => {
@@ -61,10 +60,7 @@ const flowRight = (...functions) => input => functions.reduceRight(
   input
 )
 
-const defaultLogger = new Console({
-  stdout: process.stdout,
-  stderr: process.stderr
-})
+const defaultLogger = window.console
 
 module.exports = {
   isEmptyValue,
